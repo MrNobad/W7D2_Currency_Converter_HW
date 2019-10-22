@@ -5,13 +5,14 @@ document.addEventListener('DOMContentLoaded', () => {
     el: "#app",
     data: {
       rates: [],
-      filteredRates: null
-
+      filteredRates: null,
+      convertedRates: null
     },
     computed: {
 
-      currencyConversion: function(){
-        return this.currencyCalculator(this.rates);
+      currencyCalculator: function() {
+        return this.convertedRates = (this.rates * this.filteredRates);
+        console.log(rates);
       }
     },
 
@@ -24,11 +25,6 @@ document.addEventListener('DOMContentLoaded', () => {
         fetch("https://api.exchangeratesapi.io/latest")
         .then(response => response.json())
         .then(data => this.rates = data.rates)
-      },
-
-      currencyCalculator: function(rates){
-        return rates.reduce((runningTotal, rate) => runningTotal + rates.rates, 0);
-        console.log(rates);
       }
     }
   })

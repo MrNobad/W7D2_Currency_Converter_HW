@@ -14,7 +14,8 @@
     <h2>Add an amount in Euros</h2>
     <span>€</span>
     <input type="number" name="euro" palceholder="0.00" step="0.01">
-    <br>
+<br>
+<br>
     <div id="filterInput">
       <label for="country_select">Filter Currencies By Country</label>
       <select id="country_select" v-model="filteredRates">
@@ -22,7 +23,7 @@
       </select>
 
       <div id="selected_country" v-if="filteredRates">
-        <p> Rate: {{filteredRates}} </p> <span>{{ currencyConversion }}</span>
+        <p> Rate: {{filteredRates}} </p> <span>Conversion: {{ currencyCalculator }}</span>
       </div>
       <ul>
         <li v-for="(rate, country) in rates">

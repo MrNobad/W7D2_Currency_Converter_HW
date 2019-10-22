@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>Currency Converter</title>
+  <script src="./js/bundle.js">
+
+  </script>
+</head>
+<body>
+  <h1>Currency Converter</h1>
+  <div id="app">
+
+    <h2>Add an amount in Euros</h2>
+    <span>€</span>
+    <input type="number" name="euro" palceholder="0.00" step="0.01">
+    <br>
+    <div id="filterInput">
+      <label for="country_select">Filter Currencies By Country</label>
+      <select id="country_select" v-model="filteredRates">
+        <option v-for="(rate, country) in rates" :value="rate">{{ country }}</option>
+      </select>
+
+      <div id="selected_country" v-if="filteredRates">
+        <p> Rate: {{filteredRates}} </p> <span>{{ currencyConversion }}</span>
+      </div>
+      <ul>
+        <li v-for="(rate, country) in rates">
+          <span>{{ country }} : {{ rate }}</span>
+        </li>
+      </ul>
+
+    </div>
+  </body>
+  </html>

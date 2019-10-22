@@ -12,7 +12,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
       currencyCalculator: function() {
         return this.convertedRates = (this.rates * this.filteredRates);
-        console.log(rates);
       }
     },
 

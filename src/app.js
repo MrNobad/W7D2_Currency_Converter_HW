@@ -6,12 +6,13 @@ document.addEventListener('DOMContentLoaded', () => {
     data: {
       rates: [],
       filteredRates: null,
-      convertedRates: null
+      convertedRates: null,
+      enteredRates: null
     },
     computed: {
 
       currencyCalculator: function() {
-        return this.convertedRates = (this.rates * this.filteredRates);
+        return this.convertedRates = (this.enteredRates * this.filteredRates);
       }
     },
 
